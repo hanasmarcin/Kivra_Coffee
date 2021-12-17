@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?colorSurface"
+    tools:context=".view.fragment.FiltersBottomSheetFragment">
+
+    <ImageView
+        android:id="@+id/iv_hide"
+        android:layout_width="18dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="28dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ic_arrow_ripple"
+        android:clickable="true"
+        android:contentDescription="@string/floating_action_button"
+        android:focusable="true"
+        android:rotation="-90"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_arrow"
+        android:tintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tv_filter_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingStart="12dp"
+        android:text="@string/filter_by"
+        android:textAppearance="@style/Theme.KivraCoffee.SubtitleText"
+        app:layout_constraintBottom_toTopOf="@+id/sv_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cg_sort_items"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <HorizontalScrollView
+        android:id="@+id/sv_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fadeScrollbars="true"
+        android:paddingHorizontal="20dp"
+        android:scrollbarDefaultDelayBeforeFade="100"
+        android:scrollbarFadeDuration="200"
+        android:scrollbarSize="2dp"
+        app:layout_constraintBottom_toTopOf="@id/cv_filter_items_chips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_filter_label">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_filter_categories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:checkedChip="@id/ch_country"
+            app:layout_constraintBottom_toTopOf="@+id/sv_filter_items_chips"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tv_filter_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_filter_label"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_country"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/country"
+                android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+                android:textColor="@color/color_chip_text"
+                app:rippleColor="@color/kivra_green"
+                app:chipBackgroundColor="@color/color_chip_on_surface" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_varieties"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/varieties"
+                android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+                android:textColor="@color/color_chip_text"
+                app:rippleColor="@color/kivra_green"
+                app:chipBackgroundColor="@color/color_chip_on_surface" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_intensifiers"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/intensifiers"
+                android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+                android:textColor="@color/color_chip_text"
+                app:rippleColor="@color/kivra_green"
+                app:chipBackgroundColor="@color/color_chip_on_surface" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ch_clear"
+                style="@style/Widget.MaterialComponents.Chip.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear"
+                android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+                android:textColor="@color/color_chip_text"
+                app:rippleColor="@color/kivra_green"
+                app:chipBackgroundColor="@color/color_chip_on_surface" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_filter_items_chips"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="?colorPrimarySurface"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sv_horizontal">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sv_filter_items_chips"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fillViewport="true"
+            android:padding="10dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_filter_items"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="20dp" />
+        </androidx.core.widget.NestedScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_sort_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="12dp"
+        android:text="@string/sort_by"
+        android:textAppearance="@style/Theme.KivraCoffee.SubtitleText"
+        app:layout_constraintBottom_toTopOf="@+id/cg_sort_items"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cg_sort_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:checkedChip="@+id/ch_default_sort"
+        app:layout_constraintBottom_toTopOf="@+id/tv_filter_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_sort_label"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sort_label"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ch_default_sort"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_label"
+            android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+            android:textColor="@color/color_chip_text"
+            app:rippleColor="@color/kivra_green"
+            app:chipBackgroundColor="@color/color_chip_on_surface" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ch_blend_sort"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/blend_name"
+            android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+            android:textColor="@color/color_chip_text"
+            app:rippleColor="@color/kivra_green"
+            app:chipBackgroundColor="@color/color_chip_on_surface" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ch_country_sort"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            android:textAppearance="@style/Theme.KivraCoffee.ChipText"
+            android:textColor="@color/color_chip_text"
+            app:chipBackgroundColor="@color/color_chip_on_surface" />
+    </com.google.android.material.chip.ChipGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Kivra Coffee</string>
+    <string name="notes">Notes</string>
+    <string name="intensifiers">Intensifiers</string>
+    <string name="origin">Origin</string>
+    <string name="variety">Variety</string>
+    <string name="view_on_the_map">View on the map</string>
+    <string name="search_in_google">Search in Google</string>
+    <string name="blob_background_shape">blob background shape</string>
+    <string name="coffee_bag">coffee bag</string>
+    <string name="flag_sticker_on_coffee_bag">flag sticker on coffee bag</string>
+    <string name="get_to_know_the_best_coffees_in_our_office">Get to know the best coffees in our office</string>
+    <string name="filter_icon">Filter icon</string>
+    <string name="floating_action_button">Floating action button</string>
+    <string name="country">Country</string>
+    <string name="varieties">Varieties</string>
+    <string name="clear">Clear</string>
+    <string name="sort_by">Sort by</string>
+    <string name="default_label">Default</string>
+    <string name="blend_name">Blend name</string>
+    <string name="filter_by">Filter by</string>
+    <string name="error_fetching_data">Error fetching data</string>
+    <string name="no_data_found">No data found</string>
+    <string name="icon_indicating_empty_list">Icon indicating empty list</string>
+    <string name="country_label">"Country (%1$d/%2$d)"</string>
+    <string name="variety_label">"Variety (%1$d/%2$d)"</string>
+    <string name="intensifier_label">"Intensifier (%1$d/%2$d)"</string>
+</resources>

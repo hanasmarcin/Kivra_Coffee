@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/coffeeListGraph">
+
+    <fragment
+        android:id="@+id/coffeeDetailsFragment"
+        android:name="com.hanasmarcin.kivracoffee.view.fragment.CoffeeDetailsFragment"
+        android:label="fragment_coffee_details"
+        tools:layout="@layout/fragment_coffee_details">
+        <argument
+            android:name="coffee"
+            app:argType="com.hanasmarcin.kivracoffee.model.CoffeeModel" />
+    </fragment>
+    <navigation
+        android:id="@+id/coffeeListGraph"
+        app:startDestination="@id/coffeeListFragment">
+        <fragment
+            android:id="@+id/coffeeListFragment"
+            android:name="com.hanasmarcin.kivracoffee.view.fragment.CoffeeListFragment"
+            android:label="CoffeeListFragment">
+            <action
+                android:id="@+id/action_coffeeListFragment_to_coffeeDetailsFragment"
+                app:destination="@id/coffeeDetailsFragment"
+                app:enterAnim="@android:anim/fade_in" />
+            <action
+                android:id="@+id/action_coffeeListFragment_to_filtersBottomSheetFragment"
+                app:destination="@id/filtersBottomSheetFragment" />
+        </fragment>
+        <dialog
+            android:id="@+id/filtersBottomSheetFragment"
+            android:name="com.hanasmarcin.kivracoffee.view.fragment.FiltersBottomSheetFragment"
+            android:label="fragment_filters_bottom_sheet"
+            tools:layout="@layout/fragment_filters_bottom_sheet" />
+    </navigation>
+</navigation>

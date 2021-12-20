@@ -32,8 +32,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @AndroidEntryPoint
 @ExperimentalCoroutinesApi
 class CoffeeDetailsFragment : Fragment() {
-    val args: CoffeeDetailsFragmentArgs by navArgs()
-    var binding: FragmentCoffeeDetailsBinding? = null
+    private val args: CoffeeDetailsFragmentArgs by navArgs()
+    private var binding: FragmentCoffeeDetailsBinding? = null
 
     val viewModel: CoffeeDetailsViewModel by viewModels()
 
@@ -107,8 +107,8 @@ class CoffeeDetailsFragment : Fragment() {
         setTextColor(ContextCompat.getColorStateList(context, R.color.color_chip_text))
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null // moved from onDestroy to correctly prevent memory leaks
     }
 }

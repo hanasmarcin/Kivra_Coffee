@@ -104,8 +104,11 @@ dependencies {
     // Timber
     implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
 
-    //Shimmer layout
+    // Shimmer layout
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    // Canary leak for checking memory leaks
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 }
 
 kapt {

@@ -124,8 +124,8 @@ class FiltersBottomSheetFragment : BottomSheetDialogFragment() {
         })
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null // moved from onDestroy to correctly prevent memory leaks
     }
 }

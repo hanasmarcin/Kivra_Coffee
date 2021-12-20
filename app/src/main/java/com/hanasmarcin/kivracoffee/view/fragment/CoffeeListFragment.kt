@@ -130,8 +130,10 @@ class CoffeeListFragment : Fragment() {
         })
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // added to prevent memory leaks
+        binding?.rvCoffeeList?.adapter = null
+        binding = null // moved from onDestroy to correctly prevent memory leaks
     }
 }

@@ -49,7 +49,6 @@ class CoffeeListViewModelTest {
     }
 
     private lateinit var viewModel: CoffeeListViewModel
-    private lateinit var emptyViewModel: CoffeeFiltersViewModel
     private lateinit var sampleCoffeeList: List<CoffeeModel>
 
     @Before

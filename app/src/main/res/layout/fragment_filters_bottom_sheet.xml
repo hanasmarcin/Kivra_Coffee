@@ -205,7 +205,8 @@
             android:text="@string/country"
             android:textAppearance="@style/Theme.KivraCoffee.ChipText"
             android:textColor="@color/color_chip_text"
-            app:chipBackgroundColor="@color/color_chip_on_surface" />
+            app:chipBackgroundColor="@color/color_chip_on_surface"
+            app:rippleColor="@color/kivra_green" />
     </com.google.android.material.chip.ChipGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
